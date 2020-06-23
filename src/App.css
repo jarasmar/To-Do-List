@@ -1,3 +1,11 @@
+body {
+  background-color: aquamarine;
+}
+
 .App {
-  text-align: center;
+  background-color: #9266ff;
+  min-height: 500px;
+  width: 400px;
+  /* Top and botton margin 40px. Horizontally centered (auto) */
+  margin: 40px auto;
 }
