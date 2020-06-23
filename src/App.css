@@ -3,9 +3,46 @@ body {
 }
 
 .App {
-  background-color: #9266ff;
+  background-color: #3f3160;
   min-height: 500px;
   width: 400px;
   /* Top and botton margin 40px. Horizontally centered (auto) */
   margin: 40px auto;
+}
+
+/* Input Field */
+
+#to-do-form input {
+  background-color: cornflowerblue;
+  width: 200px;
+  height: 50px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 20px;
+  margin: 20px;
+  font-size: 18px;
+  color: white;
+}
+
+#to-do-form input::placeholder {
+  color: rgb(174, 193, 228);
+}
+
+/* When we click on the element */
+#to-do-form input:focus,
+#to-do-form button:focus {
+  outline: none;
+}
+
+/* Submit Button */
+
+#to-do-form button {
+  background-color: darkgoldenrod;
+  height: 50px;
+  width: 80px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
 }
