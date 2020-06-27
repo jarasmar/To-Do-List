@@ -20,6 +20,7 @@ class App extends React.Component{
     // hard bind the functions to the constructor
     this.handleInput = this.handleInput.bind(this);
     this.addItem = this.addItem.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
   
   // Changes the state with the input value from the form
@@ -53,6 +54,17 @@ class App extends React.Component{
     }
   }
 
+  deleteItem(key) {
+    // Store in a const all the items that dont match the key
+    const filteredItems = this.state.items.filter(item => 
+      item.key !== key);
+    
+    // update state to have only the filtered items 
+    this.setState ({
+      items : filteredItems
+    })
+  }
+
   render() {
     return (
       <div className='App'>
@@ -67,7 +79,8 @@ class App extends React.Component{
           </form>
         </header>
 
-        <ListItems items={this.state.items}></ListItems>
+        <ListItems items={this.state.items}
+        deleteItem={this.deleteItem}></ListItems>
       </div>
     );
   }
