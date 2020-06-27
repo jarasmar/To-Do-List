@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ListItems from './ListItems.js'
 
 class App extends React.Component{
   constructor(props) {
@@ -61,6 +62,8 @@ class App extends React.Component{
             <button type='submit'>Add</button>
           </form>
         </header>
+
+        <ListItems></ListItems>
       </div>
     );
   }
