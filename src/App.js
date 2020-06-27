@@ -30,12 +30,11 @@ class App extends React.Component{
   addItem(e) {
     e.preventDefault();
     const newItem = this.state.currentItem;
-    console.log(newItem);
 
     // if text field is not empty
-    if(newItem.text == '') {
+    if(newItem.text !== '') {
       // add items to list (Destructuring Assignment)
-      const newItems = [...this.state.items, newItems];
+      const newItems = [...this.state.items, newItem];
       // update state
       this.setState({
         // add new element to array and reset currentItem
@@ -63,7 +62,7 @@ class App extends React.Component{
           </form>
         </header>
 
-        <ListItems></ListItems>
+        <ListItems items={this.state.items}></ListItems>
       </div>
     );
   }
