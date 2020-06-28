@@ -21,6 +21,7 @@ class App extends React.Component{
     this.handleInput = this.handleInput.bind(this);
     this.addItem = this.addItem.bind(this);
     this.deleteItem = this.deleteItem.bind(this);
+    this.setUpdate = this.setUpdate.bind(this);
   }
   
   // Changes the state with the input value from the form
@@ -54,6 +55,21 @@ class App extends React.Component{
     }
   }
 
+  setUpdate(text, key) {
+    const items = this.state.items;
+    
+    // map all the items, if key matches, change text
+    items.map(item => {
+      if(item.key === key) {
+        item.text = text;
+      }
+    })
+    // update State
+    this.setState ({
+      items : items
+    })
+  }
+
   deleteItem(key) {
     // Store in a const all the items that dont match the key
     const filteredItems = this.state.items.filter(item => 
@@ -80,7 +96,8 @@ class App extends React.Component{
         </header>
 
         <ListItems items={this.state.items}
-        deleteItem={this.deleteItem}></ListItems>
+        deleteItem={this.deleteItem}
+        setUpdate={this.setUpdate}></ListItems>
       </div>
     );
   }
